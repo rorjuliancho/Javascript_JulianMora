@@ -17,70 +17,83 @@ function init(){
   var ocho = document.getElementById('8');
   var nueve = document.getElementById('9');
   var cero = document.getElementById('0');
+  var punto = document.getElementById('punto');
 
+  // VISUALIZACIÓN DE NUMEROS EN EL DISPLAY
   uno.onclick = function(e){
+      limpiar();
       display.textContent = display.textContent  + "1";
   }
 
   dos.onclick = function(e){
+      limpiar();
       display.textContent = display.textContent  + "2";
   }
 
   tres.onclick = function(e){
+      limpiar();
       display.textContent = display.textContent  + "3";
   }
 
   cuatro.onclick = function(e){
+      limpiar();
       display.textContent = display.textContent  + "4";
   }
 
   cinco.onclick = function(e){
+      limpiar();
       display.textContent = display.textContent  + "5";
   }
 
   seis.onclick = function(e){
+      limpiar();
       display.textContent = display.textContent  + "6";
   }
 
   siete.onclick = function(e){
+      limpiar();
       display.textContent = display.textContent  + "7";
   }
 
   ocho.onclick = function(e){
+      limpiar();
       display.textContent = display.textContent  + "8";
   }
 
   nueve.onclick = function(e){
+      limpiar();
       display.textContent = display.textContent  + "9";
   }
 
   cero.onclick = function(e){
+      limpiar();
       display.textContent = display.textContent  + "0";
   }
 
   on.onclick = function(e){
       resetear();
+      display.textContent = display.textContent  + "0";
   }
-
-  suma.onclick = function(e){
+  // OPERACION SUMA
+  mas.onclick = function(e){
       operandoa = display.textContent;
       operacion = "+";
       limpiar();
   }
 
-  resta.onclick = function(e){
+  menos.onclick = function(e){
       operandoa = display.textContent;
       operacion = "-";
       limpiar();
   }
 
-  multiplicacion.onclick = function(e){
+  por.onclick = function(e){
       operandoa = display.textContent;
       operacion = "*";
       limpiar();
   }
 
-  division.onclick = function(e){
+  dividido.onclick = function(e){
       operandoa = display.textContent;
       operacion = "/";
       limpiar();
@@ -101,24 +114,25 @@ function init(){
     operandob = 0;
     operacion = "";
   }
+  function resolver(){
+    var res = 0;
+    switch(operacion){
+      case "+":
+        res = parseFloat(operandoa) + parseFloat(operandob);
+        break;
+      case "-":
+          res = parseFloat(operandoa) - parseFloat(operandob);
+          break;
+      case "*":
+        res = parseFloat(operandoa) * parseFloat(operandob);
+        break;
+      case "/":
+        res = parseFloat(operandoa) / parseFloat(operandob);
+        break;
+    }
+    resetear();
+   display.textContent = res;
 }
 
-function resolver(){
-  var res = 0;
-  switch(operacion){
-    case "+":
-      res = parseFloat(operandoa) + parseFloat(operandob);
-      break;
-    case "-":
-        res = parseFloat(operandoa) - parseFloat(operandob);
-        break;
-    case "*":
-      res = parseFloat(operandoa) * parseFloat(operandob);
-      break;
-    case "/":
-      res = parseFloat(operandoa) / parseFloat(operandob);
-      break;
-  }
-  resetear();
-  resultado.textContent = res;
+
 }
