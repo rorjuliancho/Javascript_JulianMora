@@ -1,5 +1,5 @@
 function init(){
-
+  // asignacion de variables
   var display = document.getElementById('display');
   var on = document.getElementById('on');
   var mas = document.getElementById('mas');
@@ -19,13 +19,8 @@ function init(){
   var cero = document.getElementById('0');
   var punto = document.getElementById('punto');
 
-  // VALIDACION 8 CARACTERES EN EL DISPPLAY
-
-
-
   // VISUALIZACIÓN DE NÚMEROS EN EL DISPLAY
   uno.onclick = function(e){
-
     if(display.textContent == 0){
         cleardisplay();
         display.textContent = display.textContent  + "1";
@@ -37,22 +32,20 @@ function init(){
       }
 
     }
-
   }
 
   dos.onclick = function(e){
+      if(display.textContent == 0){
+          cleardisplay();
+        display.textContent = display.textContent  + "2";
+      }else{
+        if(display.innerHTML.length==8){
 
-        if(display.textContent == 0){
-            cleardisplay();
-          display.textContent = display.textContent  + "2";
         }else{
-          if(display.innerHTML.length==8){
-
-          }else{
-            display.textContent = display.textContent  + "2";
-          }
-
+          display.textContent = display.textContent  + "2";
         }
+
+      }
   }
 
   tres.onclick = function(e){
@@ -149,44 +142,59 @@ function init(){
   }
 
   cero.onclick = function(e){
+    if(display.textContent == 0){
+        cleardisplay();
+          display.textContent = display.textContent  + "0";
+    }else{
+      if(display.innerHTML.length==8){
 
-      display.textContent = display.textContent  + "0";
+      }else{
+          display.textContent = display.textContent  + "0";
+      }
+    }
   }
-
+  punto.onclick = function(e){
+    display.textContent = display.textContent  + ".";
+  }
+  sign.onclick = function(e){
+    display.textContent = display.textContent *(-1);
+  }
+  // OPCIÓN ON/C
   on.onclick = function(e){
       resetear();
       display.textContent = display.textContent  + "0";
   }
+
   // OPERACION SUMA
   mas.onclick = function(e){
       valuenumber = display.textContent;
       operacion = "+";
       cleardisplay();
   }
-
+  // OPERACION RESTA
   menos.onclick = function(e){
       valuenumber = display.textContent;
       operacion = "-";
       cleardisplay();
   }
-
+  // OPERACION MULTIPLACION
   por.onclick = function(e){
       valuenumber = display.textContent;
       operacion = "*";
       cleardisplay();
   }
-
+  // OPERACION DIVISIÓN
   dividido.onclick = function(e){
       valuenumber = display.textContent;
       operacion = "/";
       cleardisplay();
   }
-
+  // OPERACION IGUAL
   igual.onclick = function(e){
       valueequals = display.textContent;
       resolver();
   }
-
+  // LIMPIEZA DE PANTALLA
   function cleardisplay(){
     display.textContent = "";
   }
@@ -197,6 +205,7 @@ function init(){
     valueequals = 0;
     operacion = "";
   }
+
   function resolver(){
     var result = 0;
     switch(operacion){
@@ -211,6 +220,7 @@ function init(){
         break;
       case "/":
         result = parseFloat(valuenumber) / parseFloat(valueequals);
+        result = result.toFixed(6);
         break;
     }
     resetear();
