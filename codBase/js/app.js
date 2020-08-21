@@ -151,80 +151,74 @@ function init(){
   }
 
   dos.onclick = function(e){
+    if(display.textContent == 0){
+        cleardisplay();
+      display.textContent = display.textContent  + "2";
+    }else{
+      if(display.innerHTML.length==8){
 
-      if(display.textContent == 0){
-          cleardisplay();
-        display.textContent = display.textContent  + "2";
       }else{
-        if(display.innerHTML.length==8){
-
-        }else{
-          display.textContent = display.textContent  + "2";
-        }
-
+        display.textContent = display.textContent  + "2";
       }
+
+    }
   }
 
   tres.onclick = function(e){
+    if(display.textContent == 0){
+        cleardisplay();
+          display.textContent = display.textContent  + "3";
+    }else{
+      if(display.innerHTML.length==8){
 
-        if(display.textContent == 0){
-            cleardisplay();
-              display.textContent = display.textContent  + "3";
-        }else{
-          if(display.innerHTML.length==8){
+      }else{
+        display.textContent = display.textContent  + "3";
+      }
 
-          }else{
-            display.textContent = display.textContent  + "3";
-          }
-
-        }
+    }
   }
 
   cuatro.onclick = function(e){
+    if(display.textContent == 0){
+        cleardisplay();
+        display.textContent = display.textContent  + "4";
+    }else{
+      if(display.innerHTML.length==8){
 
-        if(display.textContent == 0){
-            cleardisplay();
-            display.textContent = display.textContent  + "4";
-        }else{
-          if(display.innerHTML.length==8){
+      }else{
+      display.textContent = display.textContent  + "4";
+      }
 
-          }else{
-          display.textContent = display.textContent  + "4";
-          }
-
-        }
+    }
   }
 
   cinco.onclick = function(e){
+    if(display.textContent == 0){
+        cleardisplay();
+        display.textContent = display.textContent  + "5";
+    }else{
+      if(display.innerHTML.length==8){
 
-        if(display.textContent == 0){
-            cleardisplay();
-            display.textContent = display.textContent  + "5";
-        }else{
-          if(display.innerHTML.length==8){
-
-          }else{
-            display.textContent = display.textContent  + "5";
-          }
-        }
+      }else{
+        display.textContent = display.textContent  + "5";
+      }
+    }
   }
 
   seis.onclick = function(e){
+    if(display.textContent == 0){
+        cleardisplay();
+          display.textContent = display.textContent  + "6";
+    }else{
+      if(display.innerHTML.length==8){
 
-        if(display.textContent == 0){
-            cleardisplay();
-              display.textContent = display.textContent  + "6";
-        }else{
-          if(display.innerHTML.length==8){
-
-          }else{
-            display.textContent = display.textContent  + "6";
-          }
-        }
+      }else{
+        display.textContent = display.textContent  + "6";
+      }
+    }
   }
 
   siete.onclick = function(e){
-
     if(display.textContent == 0){
         cleardisplay();
         display.textContent = display.textContent  + "7";
@@ -238,7 +232,6 @@ function init(){
   }
 
   ocho.onclick = function(e){
-
     if(display.textContent == 0){
         cleardisplay();
         display.textContent = display.textContent  + "8";
@@ -252,31 +245,29 @@ function init(){
   }
 
   nueve.onclick = function(e){
+    if(display.textContent == 0){
+        cleardisplay();
+          display.textContent = display.textContent  + "9";
+    }else{
+      if(display.innerHTML.length==8){
 
-      if(display.textContent == 0){
-          cleardisplay();
-            display.textContent = display.textContent  + "9";
       }else{
-        if(display.innerHTML.length==8){
-
-        }else{
-            display.textContent = display.textContent  + "9";
-        }
+          display.textContent = display.textContent  + "9";
       }
+    }
   }
 
   cero.onclick = function(e){
+    if(display.textContent == 0){
+        cleardisplay();
+          display.textContent = display.textContent  + "0";
+    }else{
+      if(display.innerHTML.length==8){
 
-      if(display.textContent == 0){
-          cleardisplay();
-            display.textContent = display.textContent  + "0";
       }else{
-        if(display.innerHTML.length==8){
-
-        }else{
-            display.textContent = display.textContent  + "0";
-        }
+          display.textContent = display.textContent  + "0";
       }
+    }
   }
   punto.onclick = function(e){
     display.textContent = display.textContent  + ".";
@@ -291,31 +282,32 @@ function init(){
       display.textContent = display.textContent  + "0";
   }
 
-  // OPERACION SUMA
+  // OPERACIONES
+
   mas.onclick = function(e){
       valuenumber = display.textContent;
       operacion = "+";
       cleardisplay();
   }
-  // OPERACION RESTA
+
   menos.onclick = function(e){
       valuenumber = display.textContent;
       operacion = "-";
       cleardisplay();
   }
-  // OPERACION MULTIPLACION
+
   por.onclick = function(e){
       valuenumber = display.textContent;
       operacion = "*";
       cleardisplay();
   }
-  // OPERACION DIVISIÓN
+
   dividido.onclick = function(e){
       valuenumber = display.textContent;
       operacion = "/";
       cleardisplay();
   }
-  // OPERACION IGUAL
+
   igual.onclick = function(e){
       valueequals = display.textContent;
       resolver();
@@ -350,7 +342,5 @@ function init(){
         break;
     }
     display.textContent = result;
-}
-
-
+  }
 }
